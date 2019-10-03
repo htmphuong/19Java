@@ -1,0 +1,85 @@
+package OOP;
+
+import java.util.Enumeration;
+import java.util.Scanner;
+import java.util.Vector;
+
+public class StudentManagement {
+	Vector<Student> vStudent = new Vector<>();
+	
+	public void input() {
+		System.out.println("Nhap so sv n= ");
+		int n;
+		Scanner key = new Scanner(System.in);
+		n = Integer.parseInt(key.nextLine());
+		for(int i=0;i<n;i++) {
+			System.out.println("Nhap thong tin thu "+i);
+			System.out.println("ID=");
+			int id= Integer.parseInt(key.nextLine());
+			System.out.println("Name=");
+			String name= key.nextLine();
+			System.out.println("Aver=");
+			float aver= Float.parseFloat(key.nextLine());
+			Student s = new Student(id, name, aver);
+			vStudent.add(s);			
+		}
+	}
+	public void display() {
+		System.out.println("Thong tin danh sach sv");
+		Enumeration eNum = vStudent.elements();
+		int i=1;
+		while(eNum.hasMoreElements()) {
+			Student sts =(Student)eNum.nextElement();
+			System.out.println("ID="+sts.getId()+" name="+sts.getName()+" aver="+sts.getAver());
+		}
+	}
+	public StudentManagement() {
+		this.input();
+		this.display();
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new StudentManagement();
+	}
+
+}
+
+
+
+package OOP;
+
+public class Student {
+	private int id;
+	private String name;
+	private float aver;
+	public Student() {
+		this.id=0;
+		this.name= new String("");
+		this.aver=0;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public float getAver() {
+		return aver;
+	}
+	public void setAver(float aver) {
+		this.aver = aver;
+	}
+	public Student(int id,String name,float aver) {
+		this.id=id;
+		this.name=name;
+		this.aver=aver;
+	}
+	
+}
