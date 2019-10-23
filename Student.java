@@ -1,26 +1,60 @@
-package Inheritance;
+package j19;
 
-public class Student extends Person {
-	String StudentID;
-	float Math;
-	float Phy;
-	float Chem;
+public class Student {
+	private String name;
+	private String address;
+	private int age;
+	private float math;
+	private float phy;
+	private float chem;
+	
 	public Student() {
-		super();
-		this.StudentID="19";
-		this.Math=(float)8.0;
-		this.Chem=(float)7.5;
-		this.Phy=(float)6.0;
+		
 	}
-	public Student(String ID,String Name,String StudentID,float Math,float Phy,float Chem) {
-		super(ID, Name);
-		this.StudentID=StudentID;
-		this.Math=Math;
-		this.Phy=Phy;
-		this.Chem=Chem;
+	public Student(String name,String address, int age,float math,float PHY,float CHEM) {
+		this.name=name;
+		this.address= address;
+		this.age=age;
+		this.math=math;
+		this.phy=phy;
+		this.chem=chem;
 	}
-	public void Display() {
-		super.Display();
-		System.out.println("Math="+this.Math);
+	public String getName() {
+		return name;
 	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public float getMath() {
+		return math;
+	}
+	public void setMath(float math) {
+		this.math = math;
+	}
+	public float getPhy() {
+		return phy;
+	}
+	public void setPhy(float phy) {
+		this.phy = phy;
+	}
+	public float getChem() {
+		return chem;
+	}
+	public void setChem(float chem) {
+		this.chem = chem;
+	}
+	
+	
 }
