@@ -1,60 +1,40 @@
-package j19;
+package SV;
 
-public class Student {
-	private String name;
-	private String address;
-	private int age;
-	private float math;
-	private float phy;
-	private float chem;
+public class Student extends Person implements Comparable<Student> {
+	String id;
+	float gpa;
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public float getGpa() {
+		return gpa;
+	}
+	public void setGpa(float gpa) {
+		this.gpa = gpa;
+	}
 	public Student() {
-		
+		super();
 	}
-	public Student(String name,String address, int age,float math,float PHY,float CHEM) {
-		this.name=name;
-		this.address= address;
-		this.age=age;
-		this.math=math;
-		this.phy=phy;
-		this.chem=chem;
+	public Student(String name,String id,float gpa) {
+		super(name);
+		this.id=id;
+		this.gpa=gpa;
 	}
-	public String getName() {
-		return name;
+	public void ArrangeGPA() {
+		if(this.gpa>2) System.out.println("Qualify");
+		else System.out.println("Fail");
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void Display() {
+		super.Display();
+		System.out.println("ID="+this.id+" GPA="+this.gpa);
 	}
-	public String getAddress() {
-		return address;
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return (int) (this.getName().compareTo(o.getName()));
 	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public float getMath() {
-		return math;
-	}
-	public void setMath(float math) {
-		this.math = math;
-	}
-	public float getPhy() {
-		return phy;
-	}
-	public void setPhy(float phy) {
-		this.phy = phy;
-	}
-	public float getChem() {
-		return chem;
-	}
-	public void setChem(float chem) {
-		this.chem = chem;
-	}
-	
-	
 }

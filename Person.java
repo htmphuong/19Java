@@ -1,40 +1,25 @@
-package Inheritance;
+package SV;
 
-import java.util.Scanner;
+public abstract class Person {
+	String name;
 
-public class Person {
-	private String ID;
-	private String Name;
-	
-	public String getID() {
-		return ID;
-	}
-	public void setID(String iD) {
-		ID = iD;
-	}
 	public String getName() {
-		return Name;
+		return name;
 	}
+
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
+	// constructors
 	public Person() {
-		this.Name="ABC";
-		this.ID="123";
+		
 	}
-	public Person(String ID,String Name) {
-		this.ID=ID;
-		this.Name=Name;		
+	public Person(String name) {
+		this.name=name;
 	}
-	public void Input() {
-		Scanner key = new Scanner(System.in);
-		System.out.println("ID=");
-		ID =key.nextLine();
-		System.out.println("Name=");
-		Name=key.nextLine();
-	}
+	public abstract void ArrangeGPA(); //virtual
 	public void Display() {
-		System.out.println("ID="+this.ID+" name="+this.Name);
+		System.out.println("Name ="+this.name);
 	}
-	
+
 }
