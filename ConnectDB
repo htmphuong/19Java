@@ -1,0 +1,13 @@
+try {
+					//ket noi csdl
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fbook","root","");
+					
+					//chen vao bang Account
+					Statement s = con.createStatement();
+					int n = s.executeUpdate("Insert into account values('"+tfEmail.getText()+"','"+tfPass.getText()+"')");
+					JOptionPane.showConfirmDialog(null, "OK");
+				} catch (Exception e2) {
+					// TODO: handle exception
+					e2.printStackTrace();
+				}
