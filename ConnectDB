@@ -1,4 +1,42 @@
-try {
+package GUI;
+
+
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class TaiKhoan extends JFrame {
+	JLabel lblEmail =  new JLabel("Email");
+	JTextField tfEmail = new JTextField(20);
+	JLabel lblPass = new JLabel("Pass");
+	JTextField tfPass = new JTextField(20);
+	JButton btnRegis = new JButton("Regis");
+	public TaiKhoan() {
+		Container cont =this.getContentPane();
+		setLayout(new FlowLayout());
+		cont.add(lblEmail);
+		cont.add(tfEmail);
+		cont.add(lblPass);
+		cont.add(tfPass);
+		cont.add(btnRegis);
+		btnRegis.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				try {
 					//ket noi csdl
 					Class.forName("com.mysql.jdbc.Driver");
 					Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fbook","root","");
@@ -11,3 +49,15 @@ try {
 					// TODO: handle exception
 					e2.printStackTrace();
 				}
+			}
+		});
+		pack();
+		setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new TaiKhoan();
+	}
+
+}
